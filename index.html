@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BTPLogik — SAP BTP + SAP Core AI Services</title>
-  <meta name="description" content="BTPLogik: Accelerate your enterprise with SAP BTP + SAP Core AI. Architecture, development, security, monitoring, and AI governance." />
+  <title>BTPLogik ,  SAP BTP + SAP Core AI Services</title>
+  <meta name="description"
+    content="BTPLogik: Accelerate your enterprise with SAP BTP + SAP Core AI. Architecture, development, security, monitoring, and AI governance." />
 
   <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <!-- AOS (Animate On Scroll) -->
@@ -19,88 +22,181 @@
 
   <style>
     :root {
-      --brand-blue: #0d6efd; /* Bootstrap primary */
-      --brand-dark: #0b0f14; /* Deep black-blue */
+      --brand-blue: #0d6efd;
+      /* Bootstrap primary */
+      --brand-dark: #0b0f14;
+      /* Deep black-blue */
       --brand-black: #000000;
       --card-bg: #0f1520;
     }
 
-    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background: var(--brand-dark); color: #fff; }
+    html,
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--brand-dark);
+      color: #fff;
+    }
 
     /* Navbar */
-    .navbar { background: rgba(5, 8, 12, 0.75); backdrop-filter: blur(8px); }
+    .navbar {
+      background: rgba(5, 8, 12, 0.75);
+      backdrop-filter: blur(8px);
+    }
+
     .navbar-brand span {
       background: linear-gradient(90deg, #fff, #8cc2ff);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      font-weight: 800; letter-spacing: .5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+      letter-spacing: .5px;
     }
 
     /* Hero */
     .hero {
       position: relative;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(13,110,253,.25), transparent 60%),
-                  radial-gradient(900px 500px at 90% 30%, rgba(0,123,255,.18), transparent 60%),
-                  linear-gradient(180deg, #0a0f16 0%, #0b0f14 100%);
-      color: #fff; min-height: 90vh; display: grid; place-items: center; overflow: hidden;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(13, 110, 253, .25), transparent 60%),
+        radial-gradient(900px 500px at 90% 30%, rgba(0, 123, 255, .18), transparent 60%),
+        linear-gradient(180deg, #0a0f16 0%, #0b0f14 100%);
+      color: #fff;
+      min-height: 90vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
     }
+
     .hero .glass {
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      border-radius: 24px; padding: 2.25rem; backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+      border-radius: 24px;
+      padding: 2.25rem;
+      backdrop-filter: blur(8px);
     }
-    .hero h1 { font-weight: 800; font-size: clamp(2rem, 3.5vw, 3.25rem); line-height: 1.1; }
-    .hero p.lead { color: #dbe9ff; }
+
+    .hero h1 {
+      font-weight: 800;
+      font-size: clamp(2rem, 3.5vw, 3.25rem);
+      line-height: 1.1;
+    }
+
+    .hero p.lead {
+      color: #dbe9ff;
+    }
 
     /* Section headers */
-    .section-title { font-weight: 800; letter-spacing: .3px; }
-    .section-subtitle { color: #b7c9e8; }
+    .section-title {
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .section-subtitle {
+      color: #b7c9e8;
+    }
 
     /* Cards */
     .btp-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
       border-radius: 20px;
-      box-shadow: 0 15px 50px rgba(0,0,0,.25);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, .25);
       transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
       height: 100%;
     }
-    .btp-card:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,.35); border-color: rgba(13,110,253,.45); }
+
+    .btp-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+      border-color: rgba(13, 110, 253, .45);
+    }
+
     .btp-card .icon {
-      width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px;
-      background: rgba(13,110,253,.15); color: #8ec1ff; font-size: 1.25rem; margin-bottom: .75rem;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(13, 110, 253, .15);
+      color: #8ec1ff;
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
     }
 
     /* Feature image panels */
     .feature-img {
-      background: #0c1320; border: 1px dashed rgba(255,255,255,.12); border-radius: 16px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+      background: #0c1320;
+      border: 1px dashed rgba(255, 255, 255, .12);
+      border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04);
     }
-    .feature-img img { width: 100%; height: auto; border-radius: 14px; }
+
+    .feature-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
 
     /* Stats */
-    .stat-card { background:#0f1520; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:1.5rem; box-shadow: 0 12px 40px rgba(0,0,0,.25); }
-    .stat-value { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; }
-    .stat-label { color: #a6b9d9; }
+    .stat-card {
+      background: #0f1520;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+    }
+
+    .stat-value {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+    }
+
+    .stat-label {
+      color: #a6b9d9;
+    }
 
     /* CTA */
-    .cta { background: linear-gradient(180deg, rgba(13,110,253,.12), rgba(13,110,253,.04)); border-top: 1px solid rgba(255,255,255,.08); }
+    .cta {
+      background: linear-gradient(180deg, rgba(13, 110, 253, .12), rgba(13, 110, 253, .04));
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
 
     /* Buttons */
-    .btn-primary { box-shadow: 0 8px 22px rgba(13,110,253,.35); }
-    .btn-outline-light { border-color: rgba(255,255,255,.45); color: #fff; }
-    .btn-outline-light:hover { background: #fff; color:#000; }
+    .btn-primary {
+      box-shadow: 0 8px 22px rgba(13, 110, 253, .35);
+    }
+
+    .btn-outline-light {
+      border-color: rgba(255, 255, 255, .45);
+      color: #fff;
+    }
+
+    .btn-outline-light:hover {
+      background: #fff;
+      color: #000;
+    }
 
     /* Decorative wave */
-    .wave { position: absolute; bottom: -1px; left: 0; width: 100%; }
+    .wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+    }
 
     /* Footer */
-    footer { color: #b8c7e6; }
+    footer {
+      color: #b8c7e6;
+    }
 
     /* Utilities */
-    .badge-soft { background: rgba(13,110,253,.15); color: #b7d5ff; border:1px solid rgba(13,110,253,.35); }
+    .badge-soft {
+      background: rgba(13, 110, 253, .15);
+      color: #b7d5ff;
+      border: 1px solid rgba(13, 110, 253, .35);
+    }
   </style>
 </head>
+
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -109,7 +205,8 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" height="22" />
         <span>BTPLogik</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="nav">
@@ -129,34 +226,41 @@
       <div class="row align-items-center g-4">
         <div class="col-lg-7" data-aos="fade-right" data-aos-duration="800">
           <div class="glass">
-            <span class="badge badge-soft mb-3"><i class="bi bi-lightning-charge me-1"></i> Service Page — One‑Page Web Layout</span>
-            <h1 class="mb-3">Accelerate Your Enterprise with <span class="text-primary">SAP BTP</span> + <span class="text-primary">SAP Core AI</span></h1>
-            <p class="lead mb-4">Design, build, and run intelligent, secure, and scalable solutions — from platform architecture and integrations to AI agents and governance.</p>
+            <span class="badge badge-soft mb-3"><i class="bi bi-lightning-charge me-1"></i> Service Page ,  One‑Page Web
+              Layout</span>
+            <h1 class="mb-3">Accelerate Your Enterprise with <span class="text-primary">SAP BTP</span> + <span
+                class="text-primary">SAP Core AI</span></h1>
+            <p class="lead mb-4">Design, build, and run intelligent, secure, and scalable solutions ,  from platform
+              architecture and integrations to AI agents and governance.</p>
             <div class="d-flex gap-2 flex-wrap">
               <a href="#contact" class="btn btn-primary btn-lg"><i class="bi bi-rocket-takeoff me-2"></i>Get Started</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar3 me-2"></i>Schedule a Demo</a>
+              <a href="#contact" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar3 me-2"></i>Schedule a
+                Demo</a>
             </div>
           </div>
         </div>
         <div class="col-lg-5" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="150">
           <!-- Feature imagery: inline SVG architecture illustration (keeps page self‑contained & relevant) -->
           <div class="feature-img p-3">
-            <svg viewBox="0 0 600 420" role="img" aria-label="SAP BTP reference architecture illustration" width="100%" height="auto">
+            <svg viewBox="0 0 600 420" role="img" aria-label="SAP BTP reference architecture illustration" width="100%"
+              height="auto">
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#0d6efd" stop-opacity=".65"/>
-                  <stop offset="100%" stop-color="#8cc2ff" stop-opacity=".5"/>
+                  <stop offset="0%" stop-color="#0d6efd" stop-opacity=".65" />
+                  <stop offset="100%" stop-color="#8cc2ff" stop-opacity=".5" />
                 </linearGradient>
               </defs>
               <!-- Cloud -->
-              <path d="M110 180c0-30 25-55 55-55 9-30 38-50 70-45 18-24 49-35 78-27 25 7 44 26 51 49 29-6 59 10 70 37 30 0 55 25 55 55s-25 55-55 55H165c-30 0-55-25-55-55z" fill="url(#g1)" opacity=".4" />
+              <path
+                d="M110 180c0-30 25-55 55-55 9-30 38-50 70-45 18-24 49-35 78-27 25 7 44 26 51 49 29-6 59 10 70 37 30 0 55 25 55 55s-25 55-55 55H165c-30 0-55-25-55-55z"
+                fill="url(#g1)" opacity=".4" />
               <!-- Boxes: services -->
               <g stroke="#8cc2ff" stroke-width="2" fill="rgba(255,255,255,.05)">
-                <rect x="60" y="250" rx="10" ry="10" width="140" height="70"/>
-                <rect x="230" y="250" rx="10" ry="10" width="140" height="70"/>
-                <rect x="400" y="250" rx="10" ry="10" width="140" height="70"/>
-                <rect x="145" y="340" rx="10" ry="10" width="140" height="60"/>
-                <rect x="315" y="340" rx="10" ry="10" width="140" height="60"/>
+                <rect x="60" y="250" rx="10" ry="10" width="140" height="70" />
+                <rect x="230" y="250" rx="10" ry="10" width="140" height="70" />
+                <rect x="400" y="250" rx="10" ry="10" width="140" height="70" />
+                <rect x="145" y="340" rx="10" ry="10" width="140" height="60" />
+                <rect x="315" y="340" rx="10" ry="10" width="140" height="60" />
               </g>
               <!-- Labels -->
               <g fill="#cfe4ff" font-family="Inter, Arial" font-size="14" font-weight="600">
@@ -178,21 +282,29 @@
               <circle cx="300" cy="210" r="36" fill="#0d6efd" opacity=".85" />
               <text x="300" y="216" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">BTP</text>
             </svg>
-            <div class="small text-white-50 px-2 pt-2">Illustration: BTP service pillars (self‑contained SVG). Replaceable with official SAP architecture images if preferred.</div>
+            <div class="small text-white-50 px-2 pt-2">Illustration: BTP service pillars (self‑contained SVG).
+              Replaceable with official SAP architecture images if preferred.</div>
           </div>
         </div>
       </div>
     </div>
     <!-- Decorative bottom wave -->
-    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#0b0f14" d="M0,64L30,74.7C60,85,120,107,180,106.7C240,107,300,85,360,96C420,107,480,149,540,149.3C600,149,660,107,720,101.3C780,96,840,128,900,149.3C960,171,1020,181,1080,165.3C1140,149,1200,107,1260,85.3C1320,64,1380,64,1410,64L1440,64L1440,120L1410,120C1380,120,1320,120,1260,120C1200,120,1140,120,1080,120C1020,120,960,120,900,120C840,120,780,120,720,120C660,120,600,120,540,120C480,120,420,120,360,120C300,120,240,120,180,120C120,120,60,120,30,120L0,120Z"></path></svg>
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#0b0f14"
+        d="M0,64L30,74.7C60,85,120,107,180,106.7C240,107,300,85,360,96C420,107,480,149,540,149.3C600,149,660,107,720,101.3C780,96,840,128,900,149.3C960,171,1020,181,1080,165.3C1140,149,1200,107,1260,85.3C1320,64,1380,64,1410,64L1440,64L1440,120L1410,120C1380,120,1320,120,1260,120C1200,120,1140,120,1080,120C1020,120,960,120,900,120C840,120,780,120,720,120C660,120,600,120,540,120C480,120,420,120,360,120C300,120,240,120,180,120C120,120,60,120,30,120L0,120Z">
+      </path>
+    </svg>
   </header>
 
   <!-- SERVICES OVERVIEW -->
   <section id="services" class="py-5">
     <div class="container">
       <div class="row mb-4 align-items-end">
-        <div class="col-lg-8" data-aos="fade-up"><h2 class="section-title">Service Overview</h2></div>
-        <div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="100"><span class="badge badge-soft">White • Blue • Black</span></div>
+        <div class="col-lg-8" data-aos="fade-up">
+          <h2 class="section-title">Service Overview</h2>
+        </div>
+        <!-- <div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="100"><span class="badge badge-soft">White •
+            Blue • Black</span></div> -->
       </div>
 
       <div class="row g-4">
@@ -201,10 +313,12 @@
           <div class="btp-card p-4 h-100">
             <div class="icon"><i class="bi bi-diagram-3"></i></div>
             <h5 class="fw-bold">BTP Administration</h5>
-            <p class="text-white-50 mb-3">Platform architecture, automation with Terraform & GitHub Actions, governance, and provisioning.</p>
+            <p class="text-white-50 mb-3">Platform architecture, automation with Terraform & GitHub Actions, governance,
+              and provisioning.</p>
             <div class="feature-img p-2">
               <!-- Replace this image with an official SAP BTP architecture visual if desired -->
-              <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Cloud platform architecture schematic" loading="lazy" />
+              <img src="https://i.stechies.com/1020x521/userfiles/images/SAP-BTP.png"
+                alt="Cloud platform architecture schematic" loading="lazy" />
             </div>
           </div>
         </div>
@@ -213,9 +327,11 @@
           <div class="btp-card p-4 h-100">
             <div class="icon"><i class="bi bi-braces-asterisk"></i></div>
             <h5 class="fw-bold">Development & Integrations</h5>
-            <p class="text-white-50 mb-3">Application/extension development, API Management, Integration Suite, secure SDLC, and Microsoft tooling.</p>
+            <p class="text-white-50 mb-3">Application/extension development, API Management, Integration Suite, secure
+              SDLC, and Microsoft tooling.</p>
             <div class="feature-img p-2">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" alt="Integration and APIs" loading="lazy" />
+              <img src="https://www.integration-excellence.com/wp-content/uploads/2023/05/image-9.png"
+                alt="Integration and APIs" loading="lazy" />
             </div>
           </div>
         </div>
@@ -224,9 +340,12 @@
           <div class="btp-card p-4 h-100">
             <div class="icon"><i class="bi bi-shield-lock"></i></div>
             <h5 class="fw-bold">Security & Compliance</h5>
-            <p class="text-white-50 mb-3">IAS/IPS, BTP hardening, Microsoft Entra integration, compliance management.</p>
+            <p class="text-white-50 mb-3">IAS/IPS, BTP hardening, Microsoft Entra integration, compliance management.
+            </p>
             <div class="feature-img p-2">
-              <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1200&auto=format&fit=crop" alt="Security & Identity" loading="lazy" />
+              <img
+                src="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/sap/media/network-architecture.png"
+                alt="Security & Identity" loading="lazy" />
             </div>
           </div>
         </div>
@@ -237,7 +356,9 @@
             <h5 class="fw-bold">Monitoring</h5>
             <p class="text-white-50 mb-3">SAP ALM & Microsoft Sentinel, security & operational monitoring.</p>
             <div class="feature-img p-2">
-              <img src="https://images.unsplash.com/photo-1555421689-43cad7100751?q=80&w=1200&auto=format&fit=crop" alt="Monitoring dashboards" loading="lazy" />
+              <img
+                src="https://community.sap.com/legacyfs/online/storage/blog_attachments/2014/10/dashboard_example_568226.jpg"
+                alt="Monitoring dashboards" loading="lazy" />
             </div>
           </div>
         </div>
@@ -246,15 +367,18 @@
           <div class="btp-card p-4 h-100">
             <div class="icon"><i class="bi bi-cpu"></i></div>
             <h5 class="fw-bold">SAP Core AI</h5>
-            <p class="text-white-50 mb-3">GenAI Hub design, AI agents for functional use cases, AI security & governance.</p>
+            <p class="text-white-50 mb-3">GenAI Hub design, AI agents for functional use cases, AI security &
+              governance.</p>
             <div class="feature-img p-2">
-              <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1200&auto=format&fit=crop" alt="AI architecture" loading="lazy" />
+              <img src="https://community.sap.com/legacyfs/online/storage/blog_attachments/2022/08/End-to-End-Flow.png"
+                alt="AI architecture" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
 
-      <div class="text-white-50 small mt-3">Images above are neutral tech visuals from Unsplash used as placeholders. We can swap to official SAP BTP/Core AI architecture diagrams on request.</div>
+      <div class="text-white-50 small mt-3">Images above are neutral tech visuals from Unsplash used as placeholders. We
+        can swap to official SAP BTP/Core AI architecture diagrams on request.</div>
     </div>
   </section>
 
@@ -264,7 +388,8 @@
       <div class="row mb-4">
         <div class="col" data-aos="fade-up">
           <h2 class="section-title">How We Deliver</h2>
-          <p class="section-subtitle">Our approach and accelerators to get you live fast, safely, and with measurable outcomes.</p>
+          <p class="section-subtitle">Our approach and accelerators to get you live fast, safely, and with measurable
+            outcomes.</p>
         </div>
       </div>
 
@@ -292,7 +417,8 @@
                 <div class="icon flex-shrink-0"><i class="bi bi-eye"></i></div>
                 <div>
                   <div class="fw-semibold">Operate & Monitor</div>
-                  <div class="text-white-50">SRE handover, monitoring dashboards, compliance, AI lifecycle governance.</div>
+                  <div class="text-white-50">SRE handover, monitoring dashboards, compliance, AI lifecycle governance.
+                  </div>
                 </div>
               </div>
             </div>
@@ -318,9 +444,9 @@
           <div class="btp-card p-3 h-100">
             <div class="feature-img p-2 mb-2">
               <!-- You can replace this with an official BTP/ALM/Sentinel integration diagram URL -->
-              <img src="https://images.unsplash.com/photo-1600110440094-5a6ec3fba3a1?q=80&w=1200&auto=format&fit=crop" alt="Enterprise integration architecture" loading="lazy" />
+              <img src="https://community.sap.com/legacyfs/online/storage/blog_attachments/2023/10/1-57.png"
+                alt="Enterprise integration architecture" loading="lazy" />
             </div>
-            <div class="small text-white-50">Diagram placeholder — swap to SAP ALM + Microsoft Sentinel monitoring architecture on request.</div>
           </div>
         </div>
       </div>
@@ -358,7 +484,7 @@
         <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="150">
           <div class="stat-card text-center">
             <div class="stat-value">0</div>
-            <div class="stat-label">Critical AI governance gaps &gt; 7 days</div>
+            <div class="stat-label">AI governance gaps 7 days</div>
           </div>
         </div>
       </div>
@@ -369,23 +495,37 @@
   <section id="contact" class="cta py-5">
     <div class="container">
       <div class="row align-items-center g-4">
+        <!-- Left Column -->
         <div class="col-lg-8" data-aos="fade-up">
-          <h2 class="section-title mb-2">Next Steps</h2>
-          <ul class="text-white-50 mb-3">
-            <li>Pick your scope: BTP core, AI, or both</li>
-            <li>Schedule a 2‑week Kickstart workshop</li>
-            <li>Provision sandbox, GitHub repo, and Sentinel workspace</li>
-          </ul>
+          <h2 class="section-title mb-3">Your Next Steps with BTPLogik</h2>
+          <ol class="text-white-50 mb-4 fs-5">
+            <li><strong>Choose Your Focus:</strong> BTP Core, AI, or a combined approach.</li>
+            <li><strong>Book a Workshop:</strong> A 2-week Kickstart to design your roadmap.</li>
+            <li><strong>Get Hands-On:</strong> We provision your sandbox, GitHub repo, and Sentinel workspace.</li>
+          </ol>
+          <p class="text-white-50 mb-4">We guide you from discovery to operations ,  ensuring secure, scalable, and
+            AI-ready solutions on SAP BTP.</p>
           <div class="d-flex gap-2 flex-wrap">
-            <a href="#" class="btn btn-primary btn-lg"><i class="bi bi-rocket-takeoff me-2"></i>Get Started</a>
-            <a href="#" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar3 me-2"></i>Schedule Demo</a>
-            <a href="#" class="btn btn-outline-light btn-lg"><i class="bi bi-telephone me-2"></i>Contact Us</a>
+            <a href="#" class="btn btn-primary btn-lg">
+              <i class="bi bi-rocket-takeoff me-2"></i>Get Started
+            </a>
+            <a href="#" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-calendar3 me-2"></i>Schedule Demo
+            </a>
+            <a href="#" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-telephone me-2"></i>Contact Us
+            </a>
           </div>
         </div>
+
+        <!-- Right Column -->
         <div class="col-lg-4" data-aos="zoom-in">
-          <div class="btp-card p-4 h-100">
+          <div class="btp-card p-4 h-100 shadow-lg rounded-3">
             <h5 class="fw-bold mb-2">BTPLogik</h5>
-            <div class="text-white-50 small">We design, build, and operate on SAP BTP with security, observability, and AI at the core.</div>
+            <div class="text-white-50 small">
+              We design, build, and operate on SAP BTP with <strong>security</strong>, <strong>observability</strong>,
+              and <strong>AI</strong> at the core.
+            </div>
             <hr class="border-secondary-subtle my-3" />
             <form class="needs-validation" novalidate>
               <div class="mb-2">
@@ -415,9 +555,10 @@
     </div>
   </section>
 
+
   <footer class="py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-      <div class="small">© <span id="year"></span> BTPLogik — All rights reserved.</div>
+      <div class="small">© <span id="year"></span> BTPLogik ,  All rights reserved.</div>
       <div class="d-flex gap-3 small">
         <a href="#services" class="link-light link-underline-opacity-0">Services</a>
         <a href="#delivery" class="link-light link-underline-opacity-0">Delivery</a>
@@ -428,7 +569,9 @@
   </footer>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ once: true, offset: 80 });
@@ -448,4 +591,5 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
